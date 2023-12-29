@@ -1,0 +1,27 @@
+body {
+     padding: 0;
+     margin: 0;
+}
+
+.effect {
+     display: inline-block;
+     cursor: pointer; /* Add this line to show hand cursor on hover */
+}
+
+.effect {
+     transition: transform .5s ease;
+}
+
+.effect:hover {
+     transform: scale(1.2);
+}
+
+.checker{
+     position: absolute;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
