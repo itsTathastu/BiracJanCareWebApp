@@ -1,27 +1,33 @@
 body {
-     padding: 0;
-     margin: 0;
+    padding: 0;
+    margin: 0;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/biracjancare2.appspot.com/o/backgroung%20img%2Fv870-tang-36.jpg?alt=media&token=93e7d8c1-29e4-4c87-b45b-b4285f4f8760');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 .effect {
-     display: inline-block;
-     cursor: pointer; /* Add this line to show hand cursor on hover */
+    display: inline-block;
+    cursor: pointer;
+    /* Add this line to show hand cursor on hover */
 }
 
 .effect {
-     transition: transform .5s ease;
+    transition: transform .5s ease;
 }
 
 .effect:hover {
-     transform: scale(1.2);
+    transform: scale(1.2);
 }
 
-.checker{
-     position: absolute;
+.checker {
+    position: absolute;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }

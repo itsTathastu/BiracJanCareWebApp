@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { ThemeProvider } from '@emotion/react';
+import theme from './theme';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <ThemeProvider theme={theme}>
+        <App />
+    </ThemeProvider>
 );
