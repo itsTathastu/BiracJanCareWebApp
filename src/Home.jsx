@@ -2,52 +2,50 @@ import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
 
-import Navbar2 from './Navbar2';
 //Material UI imports
-import { styled, useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
+import Navbar2 from './Navbar2';
+import { Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import Item from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import ActivityLog from './ActivityLog';
+import Last3blocks from './Last3blocks';
+
 
 
 function Home() {
-  const location = useLocation();
-  const hospital_name = location.state?.hospital.name;
-  const nav = useNavigate();
-  const drawerWidth = 240;
 
-  const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
-    ({ theme, open }) => ({
-      flexGrow: 1,
-      padding: theme.spacing(3),
-      transition: theme.transitions.create("margin", {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-      marginRight: -drawerWidth,
-      ...(open && {
-        transition: theme.transitions.create("margin", {
-          easing: theme.transitions.easing.easeOut,
-          duration: theme.transitions.duration.enteringScreen,
-        }),
-        marginRight: 0,
-      }),
-      /**
-       * This is necessary to enable the selection of content. In the DOM, the stacking order is determined
-       * by the order of appearance. Following this rule, elements appearing later in the markup will overlay
-       * those that appear earlier. Since the Drawer comes after the Main content, this adjustment ensures
-       * proper interaction with the underlying content.
-       */
-      position: "relative",
-    })
-  );
+    const location = useLocation();
+    return (
+        <>
+            <Navbar2 />
+            <Typography variant="h3" component="div" sx={{ flexGrow: 1, m: 2, marginTop: '100px', backgroundColor: '' }}>
+                Welcome to {location.state?.hospital.name}
+            </Typography>
 
-  return (
-    <>
-      <Main>
-        <Navbar2 />
-        <h1>Welcome to {hospital_name}</h1>
-      </Main>
-    </>
-  );
+            <Grid container columnSpacing={1} sx={{padding:'10px'}}>
+                {/* left column */}
+                <Grid item xs={6}>
+                    <Paper elevation={10} sx={{ width: '100%', height: '600px', overflow: 'hidden', backgroundColor: 'rgba(255,255,255,.8)' }}>
+                        <Last3blocks />
+                    </Paper>
+                </Grid>
+                {/* right column */}
+                <Grid container rowSpacing={1} item xs>
+                    <Grid item xs={12} rowSpacing={1}>
+                        <Paper elevation={10} sx={{ width: '100%', height: '295px', overflow: 'hidden', backgroundColor: 'rgba(255,255,255,.8)' }}>
+                            Summary 
+                        </Paper>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Paper elevation={10} sx={{ width: '100%', height: '300px', overflow: 'hidden', backgroundColor: 'rgba(255,255,255,.8)' }}>
+                            <ActivityLog />
+                        </Paper>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </>
+    );
 }
 
 export default Home;

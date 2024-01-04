@@ -96,12 +96,12 @@ export default function Navbar2() {
                         boxSizing: 'border-box',
                     },
                 }}
-                variant="responsive"
+                variant="persistent"
                 anchor="left"
                 open={open}
             >
                 <DrawerHeader sx={{backgroundColor:'#008F91', border:'black'}}>
-                    <IconButton onClick={handleDrawerClose}>
+                    <IconButton sx={{color:'white'}} onClick={handleDrawerClose}>
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </DrawerHeader>

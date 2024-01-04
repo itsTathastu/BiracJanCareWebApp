@@ -8,18 +8,20 @@ import AddPatient from "./AddPatient";
 import AddFiles from "./AddFiles";
 import Navbar2 from "./Navbar2";
 import Home from "./Home";
-import PatientPage from "./PatientPage";
+import PatientPage2 from "./PatientPage2";
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/patient" element={<PatientPage />} />
-                <Route path="/upload" element={<AddFiles />} />
-            </Routes>
-        </BrowserRouter>
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/patient" element={<PatientPage2 />} />
+                    <Route path="/upload" element={<AddFiles />} />
+                </Routes>
+            </BrowserRouter>
+        </>
     );
 }
 

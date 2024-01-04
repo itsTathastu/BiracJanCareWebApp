@@ -74,7 +74,7 @@ function Login() {
             // console.log("Login successful");
             let hospital = content.hospital;
             hospital.isLoggedIn = true;
-            console.log(hospital);
+            // console.log(hospital);
             setTimeout((3000));
             nav('/home', { state: content });
 
