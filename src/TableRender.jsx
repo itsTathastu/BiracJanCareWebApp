@@ -84,7 +84,7 @@ function TableRender(props) {
 
     return (
         <>
-            <Typography variant="h4" align="center" gutterBottom position='absolute' marginLeft='1000px' marginTop='40px'>
+            <Typography variant="h4" align="center" gutterBottom position='absolute' marginLeft='1320px' marginTop='40px'>
                 <FormControl fullWidth>
                     <InputLabel color='success' variant="standard" htmlFor="uncontrolled-native">
                         Search by
@@ -104,10 +104,10 @@ function TableRender(props) {
                 </FormControl>
             </Typography>
             
-            <Typography variant="h4" align="center" gutterBottom position='absolute' marginLeft='820px' marginTop='44.5px'>
+            <Typography variant="h4" align="center" gutterBottom position='absolute' marginLeft='1050px' marginTop='44.5px'>
                 <Input
                     color='success'
-                    sx={{ width: '170px', color: 'black' }}
+                    sx={{ width: '250px', color: 'black' }}
                     label="outlined"
                     id="input-with-icon-adornment"
                     startAdornment={
