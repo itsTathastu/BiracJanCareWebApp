@@ -10,6 +10,7 @@ import Item from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import ActivityLog from './ActivityLog';
 import Last3blocks from './Last3blocks';
+import Summary from './Summary';
 
 
 
@@ -34,7 +35,7 @@ function Home() {
                 <Grid container rowSpacing={1} item xs>
                     <Grid item xs={12} rowSpacing={1}>
                         <Paper elevation={10} sx={{ width: '100%', height: '295px', overflow: 'hidden', backgroundColor: 'rgba(255,255,255,.8)' }}>
-                            Summary 
+                            <Summary />
                         </Paper>
                     </Grid>
                     <Grid item xs={12}>

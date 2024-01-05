@@ -73,7 +73,7 @@ function ActivityLog() {
 
     async function fetchData() {
         try {
-            const response = await axios.get('https://birac-jan-care.onrender.com/task/getLastTenTransactions', {
+            const response = await axios.get('https://birac-jan-care.onrender.com/task/getAllTransactions', {
                 headers: {
                     'Content-Type': 'application/json',
                     'x-auth-token': location.state?.token
@@ -121,7 +121,7 @@ function ActivityLog() {
             <Typography variant="h4" align="center" gutterBottom position='absolute' marginLeft='10px' marginTop='30px'>
                 Activity Log
             </Typography>
-            <Typography variant="h4" align="center" gutterBottom position='absolute' marginLeft='460px' marginTop='15px'>
+            <Typography variant="h4" align="center" gutterBottom position='absolute' marginLeft='600px' marginTop='15px'>
                 <FormControl fullWidth>
                     <InputLabel color='success' variant="standard" htmlFor="uncontrolled-native">
                         Search by
@@ -144,7 +144,7 @@ function ActivityLog() {
             <Typography variant="h4" align="center" gutterBottom position='absolute' marginLeft='350px' marginTop='20px'>
                 <Input
                     color='success'
-                    sx={{ width: '100px', color: 'black' }}
+                    sx={{ width: '240px', color: 'black' }}
                     label="outlined"
                     id="input-with-icon-adornment"
                     startAdornment={
@@ -159,7 +159,7 @@ function ActivityLog() {
             {rows == null && <h1>loading</h1>}
             {rows != null && <Box sx={{ display: 'flex', justifyContent: 'left', paddingTop: 3, marginTop: '60px' }}>
                 <Box sx={{position: 'absolute', padding:'10px'}}>
-                    <Paper elevation={10} sx={{ width: '545px', height:'190px',overflow: 'scroll', backgroundColor: 'rgba(255,255,255,0.8)' }}>
+                    <Paper elevation={10} sx={{ width: '700px', height:'190px',overflow: 'scroll', backgroundColor: 'rgba(255,255,255,0.8)' }}>
                         <TableContainer sx={{ maxHeight: 440}}>
                             <Table stickyHeader aria-label="sticky table" >
                                 <TableHead >

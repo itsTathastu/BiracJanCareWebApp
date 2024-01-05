@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
-import AnimatedNumber from "react-animated-number";
+import CountUp from 'react-countup'; 
 import Grid from '@mui/material/Grid';
 
 function DisplayBlock(props) {
@@ -32,8 +32,6 @@ function DisplayBlock(props) {
         console.log("clicked");
     }
 
-
-
     return (
         <>
             <Paper onClick={handleClick} id='zoomer' elevation={10} sx={{ backgroundColor: 'rgba(255,255,255,0)', display: 'flex', justifyContent: 'center' }}>
@@ -45,33 +43,29 @@ function DisplayBlock(props) {
                     </Grid>
                     <Grid item xs={6}>
                         <Paper elevation={0} sx={{ backgroundColor: 'rgba(255,255,255,0)' }}>
-                            <AnimatedNumber component="number"
-                                value={props.arr && countDistinctNames(props.arr)}
-                                duration={300}
+                            <CountUp
+                                end={props.arr && countDistinctNames(props.arr)}
+                                duration={3}  // Set duration in seconds
                                 style={{
                                     marginLeft: '110px',
-                                    transition: '3s ease-out',
                                     fontSize: 48,
-                                    transitionProperty:
-                                        'background-color, color, opacity'
                                 }}
-                                formatValue={value => value.toFixed(0)} />
+                                formattingFn={(value) => value.toFixed(0)}
+                            />
                             <Divider>Patients Involved</Divider>
                         </Paper>
                     </Grid>
                     <Grid item xs={6}>
                         <Paper elevation={0} sx={{ backgroundColor: 'rgba(255,255,255,0)' }}>
-                            <AnimatedNumber component="number"
-                                value={props.arr && countAllFiles(props.arr)}
-                                duration={300}
+                            <CountUp
+                                end={props.arr && countAllFiles(props.arr)}
+                                duration={3}  // Set duration in seconds
                                 style={{
                                     marginLeft: '110px',
-                                    transition: '3s ease-out',
                                     fontSize: 48,
-                                    transitionProperty:
-                                        'background-color, color, opacity'
                                 }}
-                                formatValue={value => value.toFixed(0)} />
+                                formattingFn={(value) => value.toFixed(0)}
+                            />
                             <Divider>Files Contained</Divider>
                         </Paper>
                     </Grid>
