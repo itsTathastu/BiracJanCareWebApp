@@ -49,7 +49,7 @@ function AddFiles() {
     }
 
     const handleCloseUnsuccessfulUpload = () => {
-        openSuccesFileUpload(false);
+        setUnsuccessfulUpload(false);
     }
 
     const handleCloseLoader = () => {
@@ -83,6 +83,7 @@ function AddFiles() {
         else {
             setOpenLoader(true);
             if (files) {
+                console.log("here");
                 for (let i = 0; i < files.length; i++) {
                     const file = files[i];
                     const fileRef = ref(storage, `files/${file.name}`);
@@ -97,11 +98,11 @@ function AddFiles() {
                     } catch (error) {
                         console.error("Error uploading file:", error);
                         setOpenLoader(false);
-                        openUnsuccessfulUpload(true);
+                        setUnsuccessfulUpload(true);
                     }
                 }
             }
-            console.log("Uploaded");
+            // console.log("Uploaded");
         }
     }
 
